@@ -25,9 +25,13 @@ public class CursoManager {
         
         manager.getTransaction().begin();
         
-        manager.persist(u);
-        manager.getTransaction().commit();
+        Usuario usuario = manager.find(Usuario.class, 1);
         
+//        manager.remove(usuario);
+//        manager.persist(u);
+    
+        manager.getTransaction().commit();
+        manager.close();
     }
     
 }
